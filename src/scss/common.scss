@@ -1,1 +1,65 @@
-// Заголовки, общие БЄМ блоки и проче...
+.main {
+  // .main__title
+  &__title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 88%;
+    color: #000000;
+  }
+  // .main__subtitle
+  &__subtitle {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 88%;
+    color: #000000;
+  }
+  // .main__text
+  &__text {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 88%;
+    color: #000000;
+  }
+  // .main__text-small
+  &__text-small {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 88%;
+    color: #0a0a0a;
+  }
+}
+
+.pag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  // .pag__bullet
+  &__bullet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #000000;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  // .pag__bullet-active
+  &__bullet-active {
+    color: #fff;
+    background-color: #951e20;
+  }
+  // .pag__bullet-more
+  &__bullet-more {
+  }
+}

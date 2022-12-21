@@ -1,3 +1,145 @@
 //====================================================================================================
 
+.footer {
+  // .footer__container
+  &__container {
+  }
+  // .footer__main
+  &__main {
+  }
+  // .footer__contacts
+  &__contacts {
+  }
+
+  // .footer__row
+  &__row {
+    margin: 18px 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+  }
+  // .footer__column
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: right;
+    gap: 30px;
+    & p {
+      color: #939393;
+    }
+  }
+  // .footer__logo
+  &__logo {
+    & img {
+      max-width: 160px;
+    }
+  }
+  // .footer__links
+  &__links {
+    text-align: center;
+    // .footer__links_item
+    &_item {
+      color: #939393;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+  }
+}
+.fc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  border-right: 16px solid #951e20;
+  border-left: 16px solid #951e20;
+  // .fc__button
+  &__button {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 88%;
+    color: #000000;
+    position: relative;
+    width: fit-content;
+    &::after {
+      content: "";
+      position: absolute;
+      height: 4px;
+      width: 100%;
+      background-color: #951e20;
+      bottom: -7px;
+      left: 0;
+    }
+  }
+  // .fc__contacts
+  &__contacts {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    // .fc__contacts_tel
+    &_tel {
+      background: #9b1e21;
+      border-radius: 5px;
+      padding: 16px 40px;
+      border: 1px solid #9b1e21;
+      color: #fff;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        &:hover {
+          color: #9b1e21;
+          background: #ffffff;
+        }
+      }
+    }
+    // .fc__contacts_site
+    &_site {
+      & svg path {
+        transition: all 0.3s ease 0s;
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          & svg path {
+            &:first-child {
+              fill: #9b1e21;
+            }
+            &:last-child {
+              stroke: white;
+              fill: #9b1e21;
+            }
+          }
+        }
+      }
+    }
+    // .fc__contacts_inst
+    &_inst {
+      & svg {
+        & path,
+        & rect {
+          transition: all 0.3s ease 0s;
+        }
+      }
+      @media (any-hover: hover) {
+        &:hover {
+          & svg {
+            & path {
+              fill: #9b1e21;
+            }
+            & rect {
+              &:first-child {
+                fill: white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 //====================================================================================================

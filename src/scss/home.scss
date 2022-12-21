@@ -1,6 +1,7 @@
 //====================================================================================================
 
 .mb {
+  margin-top: 20px;
   margin-bottom: 32px;
   // .mb__container
   &__container {
@@ -488,7 +489,7 @@
 //====================================================================================================
 
 .sb {
-  margin-bottom: 48px;
+  margin-bottom: 36px;
   // .sb__title
   &__title {
     margin-bottom: 30px;
@@ -583,6 +584,57 @@
       & img {
         max-width: 140px;
       }
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.aj {
+  margin-bottom: 64px;
+  // .aj__main
+  &__main {
+  }
+  // .aj__title
+  &__title {
+    margin-bottom: 40px;
+    margin-left: 48px;
+  }
+  // .aj__list
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  // .aj__item
+  &__item {
+    flex: 1 1 auto;
+    & img {
+      max-width: 252px;
+    }
+  }
+}
+
+//========================================================================================================================================================
+
+.bb {
+  // .bb__main
+  &__main {
+    background: #951e20;
+    color: #fff;
+    position: relative;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 60px;
+    &::after{
+      content:'';
+      position: absolute;
+      background-color: #000;
+      width: 16px;
+      height: 100%;
+      right: 0;
     }
   }
 }

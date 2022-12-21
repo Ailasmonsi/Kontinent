@@ -14,7 +14,9 @@
   }
   // .header__logo
   &__logo {
-    max-width: 160px;
+    & img {
+      max-width: 160px;
+    }
   }
   // .header__contacts
   &__contacts {

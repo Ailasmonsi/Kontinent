@@ -522,7 +522,10 @@
           z-index: 5;
           pointer-events: none;
           @media (max-width: $pc) {
-            display: none;
+            height: 100%;
+            width: 8px;
+            left: 50%;
+            transform: translate(-50%, 0);
           }
         }
         &::after {
@@ -781,6 +784,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (min-width: $tablet) {
+      & span {
+        display: none;
+      }
+    }
     @media (max-width: $mobile) {
       padding: 0;
       margin-bottom: 20px;
@@ -836,7 +844,12 @@
       & img {
         width: 80%;
         height: 80%;
-        @include adaptiveValue("max-height", 300, 138);
+        @include adaptiveValue("height", 300, 138);
+        @include adaptiveValue("width", 360, 160);
+        @media (max-width: $tablet) {
+          margin: 10px;
+          margin-bottom: 0;
+        }
       }
       & p {
         font-style: normal;
@@ -847,7 +860,7 @@
         width: fit-content;
         padding-bottom: 8px;
         border-bottom: 4px solid #da3033;
-        margin: 8px 0;
+        margin: 14px 0;
       }
     }
   }
@@ -1427,6 +1440,9 @@
       bottom: 0;
       background-color: #000;
       z-index: 1;
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
   }
   // .project__main
@@ -1436,12 +1452,19 @@
     border-right: 16px solid #000;
     overflow: hidden;
     background-color: #fff;
+    @media (max-width: $tablet) {
+      padding: 0;
+      border: none;
+    }
     &::before {
       content: "";
       position: absolute;
       height: 16px;
       width: 100%;
       background-color: #000;
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
     &::after {
       content: "";
@@ -1452,6 +1475,9 @@
       top: 0;
       background-color: #951e20;
       z-index: 2;
+      @media (max-width: $tablet) {
+        display: none;
+      }
     }
     // .project__main_con
     &_con {
@@ -1459,6 +1485,14 @@
       margin: 0 50px;
       border-left: 14px solid #000;
       border-right: 14px solid #000;
+      @media (max-width: $pc) {
+        margin: 0 30px;
+      }
+      @media (max-width: $tablet) {
+        margin: 0;
+        border: 8px solid #000;
+        padding: 0;
+      }
     }
   }
   // .project__images
@@ -1474,9 +1508,20 @@
 .project-il {
   display: grid;
   grid-template-columns: repeat(3, auto);
+  @media (max-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "A A"
+      "B C";
+    background-color: #000;
+    gap: 8px;
+  }
   // .project-il__item
   &__item {
     &:nth-child(1) {
+      @media (max-width: $tablet) {
+        grid-area: A;
+      }
       position: relative;
       &::before {
         content: "";
@@ -1486,6 +1531,9 @@
         background-color: #000;
         bottom: 0;
         left: -55%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
       &::after {
         content: "";
@@ -1496,9 +1544,15 @@
         bottom: 0;
         z-index: 1;
         right: -47%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
     }
     &:nth-child(2) {
+      @media (max-width: $tablet) {
+        grid-area: B;
+      }
       position: relative;
       &::before {
         content: "";
@@ -1509,6 +1563,9 @@
         bottom: 0;
         z-index: 1;
         right: -59%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
       &::after {
         content: "";
@@ -1518,9 +1575,15 @@
         background-color: #000;
         left: 0;
         top: 0;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
     }
     &:nth-child(3) {
+      @media (max-width: $tablet) {
+        grid-area: C;
+      }
       position: relative;
       &::before {
         content: "";
@@ -1531,6 +1594,9 @@
         bottom: 0;
         z-index: 1;
         right: -57%;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
       &::after {
         content: "";
@@ -1540,17 +1606,26 @@
         background-color: #000;
         left: 0;
         top: 0;
+        @media (max-width: $tablet) {
+          display: none;
+        }
       }
     }
     // .project-il__item_con
     &_con {
+      height: 100%;
     }
     // .project-il__item_main
     &_main {
+      height: 100%;
       & img {
         width: 100%;
         height: 100%;
         max-height: 240px;
+        object-fit: cover;
+        @media (max-width: $tablet) {
+          @include adaptiveValue("max-height", 200, 160);
+        }
       }
     }
   }
@@ -1602,6 +1677,12 @@
     padding-bottom: 8px;
     border-bottom: 2px solid #da3033;
     @include adaptiveValue("margin-bottom", 30, 20);
+    width: fit-content;
+    margin-top: 14px;
+    @media (max-width: $tablet) {
+      @include adaptiveValue("font-size", 30, 18);
+      margin: 20px auto 30px;
+    }
   }
   // .project-dcrn__list
   &__list {
@@ -1612,6 +1693,14 @@
   // .project-dcrn__item
   &__item {
     display: flex;
+
+    @media (max-width: $tablet) {
+      justify-content: space-between;
+      // gap: 45%;
+    }
+    // @media (max-width: $mobile) {
+    //   @include adaptiveValue("gap", 200, 15);
+    // }
     // .project-dcrn__item_main
     &_main {
       width: 150px;
@@ -1620,6 +1709,9 @@
       font-size: 20px;
       line-height: 142%;
       color: #ffffff;
+      @media (max-width: $mobile) {
+        width: 120px;
+      }
     }
     // .project-dcrn__item_span
     &_span {
@@ -1628,6 +1720,9 @@
       font-size: 20px;
       line-height: 142%;
       color: #ffffff;
+      // @media (max-width: $tablet) {
+      //   text-align: right;
+      // }
     }
     // .project-dcrn__item_rows
     &_rows {
@@ -1665,6 +1760,12 @@
   // .project-dcrn__preview
   &__preview {
     max-height: 550px;
+    @media (max-width: $pc) {
+      max-height: unset;
+    }
+    @media (max-width: $tablet) {
+      display: none;
+    }
     & img {
       width: 100%;
       height: 100%;

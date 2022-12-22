@@ -81,6 +81,10 @@
     margin-top: 40px;
     margin-bottom: 30px;
     gap: 14px;
+    @media (max-width: $mobile) {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
     // .page__bread-crumps_item
     &_item {
       font-style: normal;
@@ -89,6 +93,9 @@
       line-height: 88%;
       color: #000000;
       display: flex;
+      @media (max-width: $tablet) {
+        @include adaptiveValue("font-size", 20, 18);
+      }
       &:not(:last-child) {
         &::after {
           content: "/";

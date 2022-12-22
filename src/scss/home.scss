@@ -1286,12 +1286,19 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
+    & .fjl {
+      width: 100vw;
+    }
+    @media (min-width: $mobile) {
+      & .fjl {
+        display: none;
+      }
+    }
     @media (max-width: $mobile) {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       margin: 0 -15px;
-      padding: 0 15px;
     }
   }
   // .aj__item
@@ -1299,6 +1306,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: $mobile) {
+      display: none;
+    }
     & img {
       width: 100%;
       height: 100%;
